@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            padding: 50px 100px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #main {
+            text-align: center;
+            background-color: darkcyan;
+            padding: 50px;
+        }
+
+        .input {
+            display: inline-block;
+        }
+
+        .value {
+            padding: 10px 15px;
+            margin: 10px;
+            font-size: 25px;
+            font-weight: 600;
+            width: 300px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        label {
+            font-size: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Temperature Converter</h1>
+        <div id="main">
+            <div class="input">
+                <label for="ca">Celsius</label><br>
+                <input type="number" id="cel" class="value">
+            </div>
+            <div class="input">
+                <label for="fa">Fahrenheit</label><br>
+                <input type="number" id="fa" class="value">
+            </div>
+        </div>
+    </div>
+    <script>
+        let cel = document.getElementById("cel");
+        let fah = document.getElementById("fa");
+        cel.addEventListener('input', function () {
+            let x = this.value; // cel.value 
+            let y = (x * 9 / 5) + 32;
+            // console.log(y)
+            let val1 = (Math.trunc(y * 10)) / 10;
+            fah.value = val1;
+            // console.log(val1)
+            if (String(x).length == 0) {
+                fah.value = "";
+            }
+        });
+        
+        fah.addEventListener('input', function () {
+            let y = this.value;  // fah.value
+            let x = (y - 32) * (5 / 9);
+            let val2 = (Math.trunc(x * 10)) / 10;
+            cel.value = val2;
+            if (String(y).length == 0) {
+                cel.value = "";
+            }
+        });
+    </script>
+</body>
+
+</html>

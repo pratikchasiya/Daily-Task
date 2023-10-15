@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #main{
+            width: 700px;
+            height: 250px;
+            background-color: grey;
+            margin: 200px auto;
+            text-align: center;
+            padding: 30px; 
+            box-shadow: -3px 3px 5px green ;
+
+        }
+        h1{
+            color: darkseagreen;
+        }
+
+        .input{
+            padding: 10px 30px;
+            margin-top: 50px;
+            border: 3px solid red;
+            border-radius: 10px;
+            color: crimson;
+            font-weight: 900;
+        }
+        #rightarrow{
+            position: absolute;
+            top: 325px;
+            left: 675px;
+            font-size: 25px;
+            color: cyan;
+    
+        }
+        #leftarrow{
+            position: absolute;
+            top: 325px;
+            left: 675px;
+            font-size: 25px;
+            display: none;
+            color: cyan;
+        }
+        span{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>COPY TEXT</h1>
+        <input type="text" id="linput" class="input">
+        <span id="arrow1"><i class="fa-solid fa-arrow-right" id="rightarrow"></i></span>
+        <span id="arrow2"><i class="fa-solid fa-arrow-left" id="leftarrow"></i></span>
+        <input type="text" id="rinput" class="input">
+    </div>
+    <script>
+        let rightarrow = document.getElementById("rightarrow");
+        let leftarrow = document.getElementById("leftarrow");
+        let leftinput = document.getElementById("linput");
+        let rightinput = document.getElementById("rinput");
+        rightarrow.addEventListener('click',function(){
+            rightinput.value = leftinput.value;
+            leftinput.value = "";
+            rightarrow.style.display = "none";
+            leftarrow.style.display = "block";
+        })
+        leftarrow.addEventListener('click',function(){
+            leftinput.value = rightinput.value;
+            rightinput.value = "";
+            rightarrow.style.display = "block";
+            leftarrow.style.display = "none";
+        })
+        leftinput.addEventListener('change',function(){
+            rightinput.value = leftinput.value;
+            leftinput.value = "";
+            rightarrow.style.display = "none";
+            leftarrow.style.display = "block";
+        })
+        rightinput.addEventListener('change',function(){
+            leftinput.value = rightinput.value;
+            rightinput.value = "";
+            rightarrow.style.display = "block";
+            leftarrow.style.display = "none";
+        })
+    </script>
+</body>
+</html>

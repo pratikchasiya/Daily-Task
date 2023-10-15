@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #main {
+            width: 100%;
+            height: 1500px;
+        }
+        #navbar {
+            text-align: center;
+            background-color: aquamarine;
+            height: 100px;
+        }
+
+        #navbar ul li {
+            display: inline-block;
+            padding: 25px 10px;
+            color: black;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+      
+        /* .active{
+            top: 100px;
+        } */
+       
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="navbar">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact us</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('scroll', function () {
+            let navbar = document.getElementById("navbar");
+            if (window.pageYOffset >= 100) {
+                navbar.classList.add("sticky");
+                navbar.style.boxShadow = "3px 3px 5px green";
+                navbar.style.backgroundColor = "yellow";
+            }
+            if (window.pageYOffset >= 300) {
+                navbar.classList.add("sticky");
+                navbar.style.boxShadow = "5px 5px 5px orange";
+                navbar.style.backgroundColor = "green";
+            }
+            if (window.pageYOffset >= 500) {
+                navbar.classList.add("sticky");
+                navbar.style.boxShadow = "5px 5px 20px yellow";
+                navbar.style.backgroundColor = "pink";
+            }
+            if (window.pageYOffset >= 700) {
+                navbar.classList.add("sticky");
+                navbar.style.boxShadow =  "5px 5px 10px red"
+                navbar.style.backgroundColor = "skyblue";
+            }
+            
+            window.addEventListener('scroll',function(){
+                let btn = document.getElementById("btn");
+                if(window.pageYOffset >= 100){
+                    btn.classList.add("active");
+                }
+               
+            })
+            
+          
+        })
+    </script>
+</body>
+
+</html>

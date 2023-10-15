@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            /* border: 1px solid black; */
+            box-sizing: border-box;
+        }
+        #container{
+            width: 700px;
+            margin: 0 auto;
+            border: 1px solid black;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .sec{
+            float: left;
+            border: 1px solid black;
+        }
+        .img img{
+            width: 200px;
+            height: 250px;
+            float: left;
+            padding: 20px;
+        }
+        .p p{
+            padding: 40px;
+            text-align: justify;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .btn{
+            width: 700px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn1{
+            padding: 20px 60px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 10px;
+        }
+        #sec1{
+            display: block;
+        }
+        #sec2,
+        #sec3,
+        #sec4{
+            display: none;
+        }
+        .btn1:hover{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="btn">
+            <button class="btn1" id="tab1">Tab-1</button>
+            <button class="btn1" id="tab2">Tab-2</button>
+            <button class="btn1" id="tab3">Tab-3</button>
+            <button class="btn1" id="tab4">Tab-4</button>
+        </div>
+        <div id="sec1" class="sec">
+            <div class="img"><img src="images/download (1).jpg" alt=""></div>
+            <div class="p">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptate dolorum omnis unde, qui dolor fugit fugiat ex exercitationem eius suscipit sapiente, necessitatibus nemo nihil voluptatibus quisquam magnam autem voluptas sit nobis tenetur, deleniti distinctio! Adipisci eaque odio vero, tenetur quo numquam porro inventore, ratione quaerat, a neque blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ratione!</p>
+            </div>
+        </div>
+        <div id="sec2" class="sec">
+            <div class="img"><img src="images/download (2).jpg" alt=""></div>
+            <div class="p">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptate dolorum omnis unde, qui dolor fugit fugiat ex exercitationem eius suscipit sapiente, necessitatibus nemo nihil voluptatibus quisquam magnam autem voluptas sit nobis tenetur, deleniti distinctio! Adipisci eaque odio vero, tenetur quo numquam porro inventore, ratione quaerat, a neque blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus dolorum harum et, expedita nemo?</p>
+            </div>
+        </div>
+        <div id="sec3" class="sec">
+            <div class="img"><img src="images/download (3).jpg" alt=""></div>
+            <div class="p">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptate dolorum omnis unde, qui dolor fugit fugiat ex exercitationem eius suscipit sapiente, necessitatibus nemo nihil voluptatibus quisquam magnam autem voluptas sit nobis tenetur, deleniti distinctio! Adipisci eaque odio vero, tenetur quo numquam porro inventore, ratione quaerat, a neque blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ratione!</p>
+            </div>
+        </div>
+        <div id="sec4" class="sec">
+            <div class="img"><img src="images/download.jpg" alt=""></div>
+            <div class="p">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptate dolorum omnis unde, qui dolor fugit fugiat ex exercitationem eius suscipit sapiente, necessitatibus nemo nihil voluptatibus quisquam magnam autem voluptas sit nobis tenetur, deleniti distinctio! Adipisci eaque odio vero, tenetur quo numquam porro inventore, ratione quaerat, a neque blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ratione! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus consequuntur enim architecto exercitationem sapiente. Excepturi ut asperiores quisquam quidem laboriosam.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let tab1 = document.getElementById("tab1");
+        tab1.addEventListener('click',show1);
+        let tab2 = document.getElementById("tab2");
+        tab2.addEventListener('click',show2);
+        let tab3 = document.getElementById("tab3");
+        tab3.addEventListener('click',show3);
+        let tab4 = document.getElementById("tab4");
+        tab4.addEventListener('click',show4);
+
+        let sec1 = document.getElementById("sec1");
+        let sec2 = document.getElementById("sec2");
+        let sec3 = document.getElementById("sec3");
+        let sec4 = document.getElementById("sec4");
+
+        function show1(){
+            sec1.style.display = "block";
+            sec1.style.backgroundColor = "pink";
+            sec2.style.display = "none";
+            sec3.style.display = "none";
+            sec4.style.display = "none";
+        };
+        function show2(){
+            sec1.style.display = "none";
+            sec2.style.display = "block";
+            sec2.style.backgroundColor = "yellow";
+            sec3.style.display = "none";
+            sec4.style.display = "none";
+        };
+        function show3(){
+            sec1.style.display = "none";
+            sec2.style.display = "none";
+            sec3.style.display = "block";
+            sec3.style.backgroundColor = "green";
+            sec4.style.display = "none";
+        };
+        function show4(){
+            sec1.style.display = "none";
+            sec2.style.display = "none";
+            sec3.style.display = "none";
+            sec4.style.display = "block";
+            sec4.style.backgroundColor = "skyblue";
+        };
+    </script>
+</body>
+</html>

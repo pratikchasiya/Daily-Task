@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POP-UP</title>
+    <style>
+        #hidden {
+            border: 1px solid black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            box-shadow: 3px 3px 3px grey;
+        }
+        #hidden p {
+            text-align: justify;
+            padding: 25px;
+        }
+
+        #hidden button {
+            position: absolute;
+            right: 5%;
+            top: 3%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="show">
+        <button id="btn1">Click Here</button>
+        <h1>Popup Example</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque laudantium, labore beatae nobis omnis quos
+            sed praesentium tempora totam officiis architecto et expedita corporis molestiae quasi provident quae? Autem
+            omnis sunt eum minima laudantium. Consequatur ad corrupti culpa esse, exercitationem, ut laborum fugiat
+            quisquam aut error tempora sapiente deleniti porro! A sunt omnis officia at neque tenetur cum libero,
+            provident minus laudantium autem ipsa saepe ipsam ipsum quas? Veniam eos ipsa sapiente fugiat, distinctio
+            magni velit! Quis vel, culpa cumque pariatur ipsum incidunt facere praesentium. Enim, sed eos. Quae nihil
+            odio laborum, accusantium eum cumque assumenda rerum! Hic, doloremque. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Illum odio dolorum, necessitatibus, corrupti distinctio molestiae atque maxime
+            facere a laudantium, quos quisquam enim! Facilis vero quae totam labore iste, aut dicta esse maxime corrupti
+            facere perferendis provident recusandae dolor nulla ratione nobis. Quas enim architecto impedit, sit iure
+            deleniti doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates obcaecati rerum
+            quidem tenetur commodi ratione voluptatum provident ipsum aperiam! Rerum ab eos doloribus dolore, dicta
+            consequatur ex quisquam debitis nesciunt deserunt tenetur praesentium reprehenderit veniam magni placeat
+            cumque quaerat inventore impedit provident at voluptate magnam accusantium. Dolore sint doloremque omnis
+            odio, repellendus, nam, hic dolorum perspiciatis cum dignissimos quas reprehenderit similique excepturi?
+            Minima minus accusamus ut quasi ipsum saepe assumenda autem quo sed voluptates quisquam provident laudantium
+            exercitationem odio, excepturi vitae fugiat! Doloribus harum aliquid error nam nulla necessitatibus expedita
+            ducimus autem? Dolor eaque totam doloribus quae nisi id inventore!</p>
+    </div>
+    <div id="hidden">
+        <button id="btn2">X</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, possimus? Eos minima quibusdam saepe amet
+            eum aspernatur, modi consequuntur dolores, fugiat nam illum doloribus ea? Numquam provident similique
+            adipisci animi alias dignissimos pariatur repellendus odit, possimus cumque praesentium quasi accusamus
+            corrupti aliquam eos velit iste vero maxime ipsa? Officia, reprehenderit? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Incidunt eos quia aperiam nisi explicabo odio, dolores ex expedita aliquid
+            accusamus minus nulla quos. Perferendis mollitia fugit accusamus vitae temporibus rem exercitationem libero
+            provident, ea error earum explicabo quasi similique est.</p>
+    </div>
+    <script>
+        let prt = document.getElementById("show");
+        let btn1 = document.getElementById("btn1");
+        let show = document.getElementById("hidden");
+        btn1.addEventListener('click',function(){       
+            show.style.display = "block";
+            prt.style.opacity = "0.1";
+        });
+
+        let btn2 = document.getElementById("btn2");
+        btn2.addEventListener('click',function(){
+            show.style.display = "none";
+            prt.style.opacity = "1";
+        });
+
+    </script>
+</body>
+
+</html>

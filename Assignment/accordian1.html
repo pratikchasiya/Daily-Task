@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .sec{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .btn{
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            border: 1px soli navajowhite;
+            padding: 18px;
+            margin: 0 auto;
+            font-size: 15px;
+        }
+        .para{
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            width: 100%;
+        }
+        .active{
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="sec">
+        <button class="btn">Section 1</button>
+        <div class="para">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam natus repellat, corrupti officia voluptas cum blanditiis incidunt omnis alias suscipit doloremque eaque vel error dicta, ad sit ducimus in repellendus totam rem consequuntur esse dolor tempore. Distinctio ipsam sapiente eum!</p>
+        </div>
+    </div>
+    <div class="sec">
+        <button class="btn">Section 1</button>
+        <div class="para">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam natus repellat, corrupti officia voluptas cum blanditiis incidunt omnis alias suscipit doloremque eaque vel error dicta, ad sit ducimus in repellendus totam rem consequuntur esse dolor tempore. Distinctio ipsam sapiente eum!</p>
+        </div>
+    </div>
+    <div class="sec">
+        <button class="btn">Section 1</button>
+        <div class="para">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam natus repellat, corrupti officia voluptas cum blanditiis incidunt omnis alias suscipit doloremque eaque vel error dicta, ad sit ducimus in repellendus totam rem consequuntur esse dolor tempore. Distinctio ipsam sapiente eum!</p>
+        </div>
+    </div>
+    <script>
+        let btn = document.getElementsByClassName("btn");
+        for(let i=0; i<btn.length; i++){
+            btn[i].addEventListener('click',function(){
+                btn[i].classList.toggle('active');
+            })
+        }
+    </script>
+</body>
+</html>

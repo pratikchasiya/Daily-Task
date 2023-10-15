@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #main{
+            margin-bottom: 20px;
+        }
+        .cls{
+              position: fixed; 
+             top: 0;
+        }
+        header{
+            /* position: fixed; */
+            /* top: 0;
+            left: 0; */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 100px;
+            background-color: black;
+        }
+        .logo{
+            position: relative;
+            font-weight: 700;
+            color: aquamarine;
+            text-decoration: none;
+            font-size: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li{
+            position: relative;
+            list-style: none;
+        }
+        header ul li a{
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: cadetblue;
+            letter-spacing: 2px;
+            font-weight: 500;
+            /* list-style: none; */
+
+        }
+        #container{
+            margin-top: 50px;
+        }
+        #btn{
+            padding: 15px;
+            float: right;
+            margin-top: 100px;
+            margin-right: 10px;
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti voluptate similique officiis eos nostrum voluptatibus? Eos architecto, aspernatur atque, itaque vitae, numquam dolorem beatae quod labore quos eveniet. Corrupti rem illum dolorum! Minima nam et accusamus iste nihil nisi maiores!</p>
+    </div>
+    <header id="header" class="cls">
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </header>
+    <div id="container">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit modi aperiam explicabo obcaecati maxime consectetur distinctio. Inventore cum laudantium eaque accusamus error, delectus laborum earum, optio quisquam nemo voluptates incidunt nulla quas saepe hic veritatis placeat fugiat mollitia a nisi! Harum eaque reprehenderit corporis provident nisi enim officia blanditiis cupiditate similique? Beatae sit doloribus id at exercitationem sapiente animi maxime non! Earum, delectus ut tenetur dolores omnis error odit asperiores esse facilis explicabo, blanditiis mollitia! Cupiditate deleniti praesentium provident et aut quaerat non facere explicabo vero. Ut, repellendus exercitationem, sint aperiam ab non dolores possimus eum culpa at odit iste?</p>
+    </div>
+    <button id="btn">Top</button>
+    <script>
+        window.addEventListener('scroll',function(){
+            let header = document.getElementById("header");
+            if(window.pageYOffset > 30){
+                header.classList.add("cls")
+            }
+        })
+    </script>
+</body>
+</html>

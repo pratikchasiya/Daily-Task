@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #frm{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 10px solid dodgerblue;
+            width: 500px;
+            text-align: center;
+            padding: 50px;
+        }
+        .inp{
+            padding: 10px 50px;
+        }
+        #sub{
+            padding: 10px 115px;
+          background-color:dodgerblue;
+          color: white;
+          border: 1px double dodgerblue;
+        }
+        p{
+            color: red; 
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form id="frm">
+            <h1>Login</h1>
+            <input type="text" placeholder="User Name" class="inp" id="inp1">
+            <p id="para1"></p>
+            <input type="password" placeholder="Password" class="inp" id="inp2">
+            <p id="para2"></p>
+            <input type="submit" id="sub">
+        </form>
+    </div>
+    <script>
+        let form = document.getElementById("frm");
+        form.addEventListener('submit',function(e){
+           let input1 = document.getElementById("inp1");
+           let para1 = document.getElementById("para1");
+           let val1 = input1.value;
+           if(val1.length == 0){
+            para1.innerHTML = "User Name is empty";
+            e.preventDefault();
+           }
+           else if(val1.length < 8 || (!(/@/.test(val1)))){
+            para1.innerHTML = "User Name Required Minimum 8 Character and Includes @";
+            e.preventDefault();
+           }
+          else{
+            para1.innerHTML = "";  // JYRE CORRECT DETAIL NAKHIYE TYRE ERROR VALO PART JATO REHSE AA LAKHSU TO
+          }
+
+           let input2 = document.getElementById("inp2");
+           let para2 = document.getElementById("para2");
+           let val2 = input2.value;
+           if(val2.length == 0){
+            para2.innerHTML = "Password is empty";
+            e.preventDefault();
+           }
+           else if(val2.length < 8 || (!(/[a-z]/.test(val2) && /[A-Z]/.test(val2) &&  /[-’/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]/g.test(val2)))){
+            para2.innerHTML = "Password Required Minimum 8 Character 1 Upper and lower case and 1 symbol";
+            e.preventDefault();
+           }
+           else{
+            para2.innerHTML = ""; //// JYRE CORRECT DETAIL NAKHIYE TYRE ERROR VALO PART JATO REHSE AA LAKHSU TO
+           }
+        })
+    </script>
+</body>
+</html>

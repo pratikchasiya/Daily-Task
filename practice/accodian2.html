@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #accordian {
+            border: 1px solid black;
+            margin: 100px auto;
+            width: 700px;
+        }
+
+        .cls {
+            border: 1px solid black;
+            padding: 10px;
+            position: relative;
+        }
+
+        .open {
+            position: absolute;
+            top: 20px;
+            right: 80px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 80px;
+        }
+        .para1{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="accordian">
+        <div class="sec">
+            <div class="cls">
+                <h1>Section1</h1>
+                <div class="open"><i class="fa-solid fa-plus"></i></div>
+                <div class="close para1"><i class="fa-solid fa-minus"></i></div>
+            </div>
+            <div class="para para1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis temporibus, nesciunt vero dolorum
+                    velit nihil, neque odit corrupti ducimus, veritatis laudantium illum eos? Ipsa labore asperiores
+                    explicabo odit atque incidunt eum reiciendis, sequi pariatur voluptatibus dicta dolore! Hic
+                    voluptates natus eveniet, placeat similique nisi necessitatibus velit vitae animi repellat.
+                    Quibusdam.</p>
+            </div>
+        </div>
+        <div class="sec">
+            <div class="cls">
+                <h1>Section2</h1>
+                <div class="open"><i class="fa-solid fa-plus"></i></div>
+                <div class="close para1"><i class="fa-solid fa-minus"></i></div>
+            </div>
+            <div class="para para1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis temporibus, nesciunt vero dolorum
+                    velit nihil, neque odit corrupti ducimus, veritatis laudantium illum eos? Ipsa labore asperiores
+                    explicabo odit atque incidunt eum reiciendis, sequi pariatur voluptatibus dicta dolore! Hic
+                    voluptates natus eveniet, placeat similique nisi necessitatibus velit vitae animi repellat.
+                    Quibusdam.</p>
+            </div>
+        </div>
+        <div class="sec">
+            <div class="cls">
+                <h1>Section3</h1>
+                <div class="open"><i class="fa-solid fa-plus"></i></div>
+                <div class="close para1"><i class="fa-solid fa-minus"></i></div>
+            </div>
+
+            <div class="para para1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis temporibus, nesciunt vero dolorum
+                    velit nihil, neque odit corrupti ducimus, veritatis laudantium illum eos? Ipsa labore asperiores
+                    explicabo odit atque incidunt eum reiciendis, sequi pariatur voluptatibus dicta dolore! Hic
+                    voluptates natus eveniet, placeat similique nisi necessitatibus velit vitae animi repellat.
+                    Quibusdam.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let p;
+        let cls = document.getElementsByClassName("cls");
+        for(let i=0; i<cls.length; i++){
+            cls[i].addEventListener('click',function(){
+                for(let x of cls){
+                    if(p != i){
+                        if(x.lastElementChild.previousElementSibling.classList.contains("para1")){
+                        x.lastElementChild.previousElementSibling.classList.remove("para1");
+                        x.nextElementSibling.classList.add("para1");
+                        x.lastElementChild.classList.add("para1");
+                    }
+                    }
+                
+                }
+                cls[i].nextElementSibling.classList.toggle("para1");
+                cls[i].lastElementChild.classList.toggle("para1");
+                cls[i].lastElementChild.previousElementSibling.classList.toggle("para1");
+                p = i;
+            })
+        }
+        
+    </script>
+</body>
+
+</html>

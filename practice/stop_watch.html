@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #main {
+            border: 1px solid black;
+            margin: 100px auto;
+            text-align: center;
+            padding: 50px;
+            width: 700px;
+            background-color: darkslategray;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: white;
+            font-weight: 900;
+        }
+
+        #stopwatch {
+            padding: 30px;
+        }
+
+        span {
+            font-size: 80px;
+            color: white;
+            font-weight: 600;
+            /* width: 800px; */
+        }
+
+        small {
+            font-size: 25px;
+            color: white;
+            margin: 0 5px;
+        }
+
+        .click {
+            padding: 15px 25px;
+            color: white;
+        }
+
+        #btn1 {
+            background-color: forestgreen;
+            border: 1px solid forestgreen;
+        }
+
+        #btn2 {
+            background-color: red;
+            border: 1px solid red;
+        }
+
+        #btn3 {
+            background-color: deepskyblue;
+            border: 1px solid deepskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h2>Stop Watch</h2>
+        <div id="stopwatch">
+            <span id="hr">00</span><small>Hr</small>
+            <span id="min">00</span><small>Min</small>
+            <span id="sec">00</span><small>Sec</small>
+            <span id="count">00</span><small>Count</small>
+        </div>
+        <div id="btn">
+            <button id="btn1" class="click" onclick="start()">Start</button>
+            <button id="btn2" class="click" onclick="stop()">Stop</button>
+            <button id="btn3" class="click" onclick="reset()">Reset</button>
+        </div>
+    </div>
+    <script>
+        let hr = 0;
+        let min = 0;
+        let sec = 0;
+        let count = 0;
+        let flag = 0;
+        let timer = false;
+        function start() {
+            if (flag == 0) {
+                timer = true;
+                show();
+                flag++;
+            }
+
+        }
+        function stop() {
+            timer = false;
+            flag = 0;
+        }
+        function reset() {
+            timer = false;
+            hr = 0;
+            min = 0;
+            sec = 0;
+            count = 0;
+            flag = 0;
+            document.getElementById("hr").innerHTML = "00";
+            document.getElementById("min").innerHTML = "00";
+            document.getElementById("sec").innerHTML = "00";
+            document.getElementById("count").innerHTML = "00";
+        }
+        function show() {
+            if (timer == true) {
+                count++;
+                if (count == 100) {
+                    count = 0;
+                    sec++;
+                }
+                if (sec == 60) {
+                    count = 0;
+                    sec = 0;
+                    min++;
+                }
+                if (min == 60) {
+                    count = 0;
+                    sec = 0;
+                    min = 0;
+                    hr++;
+                }
+                let stringcount = count;
+                let stringsec = sec;
+                let stringmin = min;
+                let stringhr = hr;
+
+                if(count < 10){
+                    stringcount = "0" + count;
+                }
+                if(sec < 10){
+                    stringsec = "0" + sec;
+                }
+                if(min < 10){
+                    stringmin = "0" + min;
+                }
+                if(hr < 10){
+                    stringhr = "0" + hr;
+                }
+                document.getElementById("count").innerHTML = stringcount;
+                document.getElementById("sec").innerHTML = stringsec;
+                document.getElementById("min").innerHTML = stringmin;
+                document.getElementById("hr").innerHTML = stringhr;
+                setTimeout(show, 10);
+            }
+        }
+    </script>
+</body>
+
+</html>

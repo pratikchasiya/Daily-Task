@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #main {
+            width: 800px;
+            border: 1px solid black;
+            margin: 100px auto;
+        }
+
+        #tab {
+            padding: 15px 0;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .btn {
+            padding: 15px 30px;
+        }
+
+        .para {
+            /* display: flex; */
+            /* justify-content: space-between; */
+            padding: 10px;
+        }
+        .para img {
+            width: 250px;
+            height: 250px;
+            padding: 10px;
+            float: left;
+        }
+        .para p {
+            padding: 10px;
+            text-align: justify;
+            font-size: 18px;
+        }
+        #sec1{
+            display: block;
+        }
+        #sec2,#sec3,#sec4{
+            display: none;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="tab">
+            <button id="tab1" class="btn">Tab1</button>
+            <button id="tab2" class="btn">Tab2</button>
+            <button id="tab3" class="btn">Tab3</button>
+            <button id="tab4" class="btn">Tab4</button>
+        </div>
+        <div id="sec1" class="para">
+            <img src="images/img1.avif" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ratione, dolores animi obcaecati
+                inventore quidem tempora, doloribus quis tempore molestiae recusandae officia optio ipsa incidunt quae!
+                Maxime mollitia sit rem! Nisi sint tenetur facere quaerat ipsa quisquam vel eos dolorum est reiciendis
+                odio officiis eligendi, laboriosam modi, laudantium impedit recusandae sed adipisci totam. Id, fuga
+                odio, veritatis repudiandae dignissimos saepe vero dolor est nam quos maxime? Magni totam nulla et ex
+                adipisci incidunt perspiciatis consectetur laboriosam consequatur laudantium vero libero reprehenderit
+                aut, labore beatae asperiores pariatur repellendus ut ab? Vitae?</p>
+        </div>
+        <div id="sec2" class="para">
+            <img src="images/img2.avif" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ratione, dolores animi obcaecati
+                inventore quidem tempora, doloribus quis tempore molestiae recusandae officia optio ipsa incidunt quae!
+                Maxime mollitia sit rem! Nisi sint tenetur facere quaerat ipsa quisquam vel eos dolorum est reiciendis
+                odio officiis eligendi, laboriosam modi, laudantium impedit recusandae sed adipisci totam. Id, fuga
+                odio, veritatis repudiandae dignissimos saepe vero dolor est nam quos maxime? Magni totam nulla et ex
+                adipisci incidunt perspiciatis consectetur laboriosam consequatur laudantium vero libero reprehenderit
+                aut, labore beatae asperiores pariatur repellendus ut ab? Vitae?</p>
+        </div>
+        <div id="sec3" class="para">
+            <img src="images/img3.avif" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ratione, dolores animi obcaecati
+                inventore quidem tempora, doloribus quis tempore molestiae recusandae officia optio ipsa incidunt quae!
+                Maxime mollitia sit rem! Nisi sint tenetur facere quaerat ipsa quisquam vel eos dolorum est reiciendis
+                odio officiis eligendi, laboriosam modi, laudantium impedit recusandae sed adipisci totam. Id, fuga
+                odio, veritatis repudiandae dignissimos saepe vero dolor est nam quos maxime? Magni totam nulla et ex
+                adipisci incidunt perspiciatis consectetur laboriosam consequatur laudantium vero libero reprehenderit
+                aut, labore beatae asperiores pariatur repellendus ut ab? Vitae?</p>
+        </div>
+        <div id="sec4" class="para">
+            <img src="images/img4.avif" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ratione, dolores animi obcaecati
+                inventore quidem tempora, doloribus quis tempore molestiae recusandae officia optio ipsa incidunt quae!
+                Maxime mollitia sit rem! Nisi sint tenetur facere quaerat ipsa quisquam vel eos dolorum est reiciendis
+                odio officiis eligendi, laboriosam modi, laudantium impedit recusandae sed adipisci totam. Id, fuga
+                odio, veritatis repudiandae dignissimos saepe vero dolor est nam quos maxime? Magni totam nulla et ex
+                adipisci incidunt perspiciatis consectetur laboriosam consequatur laudantium vero libero reprehenderit
+                aut, labore beatae asperiores pariatur repellendus ut ab? Vitae?</p>
+        </div>
+    </div>
+    <script>
+        let sec1 = document.getElementById("sec1");
+        let sec2 = document.getElementById("sec2");
+        let sec3 = document.getElementById("sec3");
+        let sec4 = document.getElementById("sec4");
+        // let para1 = document.getElementsByClassName("para1");
+        let tab1 = document.getElementById("tab1");
+        tab1.addEventListener('click',function(){
+             sec1.style.backgroundColor = "yellow";
+             sec1.style.display = "block";
+             sec2.style.display = "none";
+             sec3.style.display = "none";
+             sec4.style.display = "none";
+        })
+        let tab2 = document.getElementById("tab2");
+        tab2.addEventListener('click',function(){
+             sec2.style.backgroundColor = "pink";
+             sec1.style.display = "none";
+             sec2.style.display = "block";
+             sec3.style.display = "none";
+             sec4.style.display = "none";
+        })
+        let tab3 = document.getElementById("tab3");
+        tab3.addEventListener('click',function(){
+             sec3.style.backgroundColor = "skyblue";
+             sec3.style.display = "block";
+             sec1.style.display = "none";
+             sec2.style.display = "none";
+             sec4.style.display = "none";
+        })
+        let tab4 = document.getElementById("tab4");
+        tab4.addEventListener('click',function(){
+             sec4.style.backgroundColor = "green";
+             sec4.style.display = "block";
+             sec1.style.display = "none";
+             sec2.style.display = "none";
+             sec3.style.display = "none";
+        })
+
+     
+
+
+    </script>
+</body>
+
+</html>

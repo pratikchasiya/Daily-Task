@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #main{
+            width: 700px;
+            margin: 0px auto;
+            border: 1px solid black;
+            
+        }
+        .cls{
+            border: 1px solid black;
+            position: relative;
+        }
+        .plus{
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .minus{
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .para1{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="sec">
+            <div class="cls">
+                <h1>Section 1</h1>
+                <div class="plus"><i class="fa-solid fa-plus"></i></div>
+                <div class="minus para1"><i class="fa-solid fa-minus"></i></div>
+            </div>
+            <div class="para para1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure beatae facere, nostrum natus eum accusamus sequi nam. Eum optio modi fugiat, officia explicabo ea, dolore fuga molestiae corrupti, labore pariatur. Et velit architecto aliquam maxime, corrupti iste fugiat, est tempore sequi neque quam obcaecati culpa laboriosam a facere sunt, odio quidem magni officiis! Sapiente aspernatur exercitationem, vel qui tenetur esse molestias possimus unde aut, maiores libero porro ducimus aliquid consequatur. Nam eius quasi quae tenetur beatae. Perspiciatis animi quos dolorem hic? Mollitia iusto excepturi rem necessitatibus ullam ducimus nisi dolorum autem doloremque culpa eum deserunt, repellendus delectus, impedit, voluptatem veniam!</p>
+            </div>
+        </div>
+        <div class="sec">
+            <div class="cls">
+                <h1>Section 2</h1>
+                <div class="plus"><i class="fa-solid fa-plus"></i></div>
+                <div class="minus para1"><i class="fa-solid fa-minus"></i></div>
+            </div>
+            <div class="para para1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure beatae facere, nostrum natus eum accusamus sequi nam. Eum optio modi fugiat, officia explicabo ea, dolore fuga molestiae corrupti, labore pariatur. Et velit architecto aliquam maxime, corrupti iste fugiat, est tempore sequi neque quam obcaecati culpa laboriosam a facere sunt, odio quidem magni officiis! Sapiente aspernatur exercitationem, vel qui tenetur esse molestias possimus unde aut, maiores libero porro ducimus aliquid consequatur. Nam eius quasi quae tenetur beatae. Perspiciatis animi quos dolorem hic? Mollitia iusto excepturi rem necessitatibus ullam ducimus nisi dolorum autem doloremque culpa eum deserunt, repellendus delectus, impedit, voluptatem veniam!</p>
+            </div>
+        </div>
+        <div class="sec">
+            <div class="cls">
+                <h1>Section 3</h1>
+                <div class="plus"><i class="fa-solid fa-plus"></i></div>
+                <div class="minus para1"><i class="fa-solid fa-minus"></i></div>
+            </div>
+            <div class="para para1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure beatae facere, nostrum natus eum accusamus sequi nam. Eum optio modi fugiat, officia explicabo ea, dolore fuga molestiae corrupti, labore pariatur. Et velit architecto aliquam maxime, corrupti iste fugiat, est tempore sequi neque quam obcaecati culpa laboriosam a facere sunt, odio quidem magni officiis! Sapiente aspernatur exercitationem, vel qui tenetur esse molestias possimus unde aut, maiores libero porro ducimus aliquid consequatur. Nam eius quasi quae tenetur beatae. Perspiciatis animi quos dolorem hic? Mollitia iusto excepturi rem necessitatibus ullam ducimus nisi dolorum autem doloremque culpa eum deserunt, repellendus delectus, impedit, voluptatem veniam!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let cls = document.getElementsByClassName("cls");
+        let para = document.getElementsByClassName("para");
+        let p;
+        for(let i=0; i<cls.length; i++){
+            cls[i].addEventListener('click',function(){
+                for(let x of cls){
+                    if(p != i){
+                        if(x.lastElementChild.previousElementSibling.classList.contains("para1")){
+                            x.lastElementChild.previousElementSibling.classList.remove("para1");
+                            x.lastElementChild.classList.add("para1");
+                            x.nextElementSibling.classList.add("para1");
+                        }
+                    }
+                }
+                cls[i].nextElementSibling.classList.toggle("para1");
+                cls[i].lastElementChild.classList.toggle("para1");
+                cls[i].lastElementChild.previousElementSibling.classList.toggle("para1");
+                p = i;
+            })
+        }
+    </script>
+</body>
+</html>

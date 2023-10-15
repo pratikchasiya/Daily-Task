@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(245, 252, 254);
+        }
+       #main{
+        width: 30%;
+        padding: 50px;
+        background-color: rgb(214, 236, 243);
+        margin: 0 auto;
+        margin: 30px auto;
+       } 
+       input{
+        padding: 10px;
+        width: 100%;
+        margin: 30px 0;
+       }
+       p{
+        background-color: white;
+        width: 100%;
+        padding: 5px;
+        font-size: 20px;
+        text-align: center;
+        border: 1px solid black;
+       }
+       span{
+        padding: 0 5px;
+       }
+    </style>
+</head>
+<body>
+    <div id="main">
+       <form action="" id="sub">
+        <input type="date" id="first" >
+        <input type="date" id="second">
+        <!-- <button>calculate the difference</button> -->
+        <input type="submit" id="result" placeholder="click here">
+        <p><span id="year">0</span><span> years</span><span id="month"> 0</span><span>  months</span><span id="day"> 0</span><span> days</span></p>
+       </form>
+    </div>
+    <script src="date1.js"></script>
+</body>
+</html>

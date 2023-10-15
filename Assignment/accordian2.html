@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
+    <style>
+        .main {
+            width: 60%;
+            margin: 0 auto;
+            border: 1px solid black;
+
+        }
+        .sec{
+            border: 1px solid black;
+        }
+
+        .open {
+            float: right;
+            /* text-align: right; */
+            position: relative;
+            bottom: 50px;
+            right: 50px;
+        }
+
+        .close {
+            float: right;
+            position: relative;
+            bottom: 50px;
+            right: 50px;
+        }
+        .hidden{
+            display: none;
+        }
+        .minus{
+            display: none;
+        }
+        /* .plus{
+            display: block;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sec">
+            <div class="sec1">
+                <h1>Section 1</h1>
+                <div class="open"><i class="fa-solid fa-plus"></i></div>
+                <div class="close minus"><i class="fa-solid fa-minus"></i></div>
+            </div>
+            <div class="para hidden">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dicta amet officiis est aliquam
+                    reiciendis accusantium quasi nulla aliquid vitae obcaecati inventore, alias, sapiente illum sit
+                    dolore nobis, maiores veniam architecto mollitia expedita exercitationem ex. Ut ipsum deleniti ad
+                    minima, omnis quia eius suscipit accusantium nobis quidem, commodi, architecto quaerat?</p>
+            </div>
+            <div class="sec">
+                <div class="sec1">
+                    <h1>Section 2</h1>
+                    <div class="open"><i class="fa-solid fa-plus"></i></div>
+                    <div class="close minus"><i class="fa-solid fa-minus"></i></div>
+                </div>
+                <div class="para hidden">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dicta amet officiis est aliquam
+                        reiciendis accusantium quasi nulla aliquid vitae obcaecati inventore, alias, sapiente illum sit
+                        dolore nobis, maiores veniam architecto mollitia expedita exercitationem ex. Ut ipsum deleniti
+                        ad minima, omnis quia eius suscipit accusantium nobis quidem, commodi, architecto quaerat?</p>
+                </div>
+                <div class="sec">
+                    <div class="sec1">
+                        <h1>Section 3</h1>
+                        <div class="open"><i class="fa-solid fa-plus"></i></div>
+                        <div class="close minus"><i class="fa-solid fa-minus"></i></div>
+                    </div>
+                    <div class="para hidden">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dicta amet officiis est aliquam
+                            reiciendis accusantium quasi nulla aliquid vitae obcaecati inventore, alias, sapiente illum
+                            sit dolore nobis, maiores veniam architecto mollitia expedita exercitationem ex. Ut ipsum
+                            deleniti ad minima, omnis quia eius suscipit accusantium nobis quidem, commodi, architecto
+                            quaerat?</p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                let prt = document.getElementsByClassName("sec1");
+                let para = document.getElementsByClassName("para");
+                let open = document.getElementsByClassName("open")
+                for(let x of prt){
+                    x.addEventListener('click',function(){
+                        x.nextElementSibling.classList.toggle("hidden");
+                        x.lastElementChild.classList.toggle("minus");
+                        x.firstElementChild.nextElementSibling.classList.toggle("minus");
+                    })
+                    
+                }
+            </script>
+</body>
+
+</html>

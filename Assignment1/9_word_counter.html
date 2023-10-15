@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #main {
+            width: 700px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        #container {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            background-color: dodgerblue;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        #text {
+            width: 100%;
+            padding: 15px;
+        }
+
+        #count {
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            background-color: dodgerblue;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="container">
+            <h1>Word and Character counter</h1>
+        </div>
+        <div><textarea name="" id="text" cols="30" rows="10"></textarea></div>
+        <div id="count">
+            <span id="word">0</span> Word and <span id="char">0</span> Character
+        </div>
+    </div>
+    <script>
+        let text = document.getElementById("text");
+        let tchar = document.getElementById("char");
+        let tword = document.getElementById("word");
+
+        text.addEventListener('input', function () {
+            let str = text.value;
+            // console.log(str)
+            let trim = str.trim();
+            // console.log(trim)
+            let char = trim.length;
+            // console.log(char)
+
+            tchar.innerHTML = char;
+            // let arr = str.split(" ");
+            // let arr1 = arr.sort();
+            // let str2 = arr1.join(" ");
+            // let str3 = str2.trim();
+            // let arr2 = str3.split(" ");
+            // let word = arr2.length;
+            let arr = str.split(" ").sort().join(" ").trim().split(" ").length;
+            console.log(str.split(" ").sort().join(" ").trim().split(" ").length)
+            if(str.split(" ").sort().join(" ").trim().split(" ").join(" ").trim() == ""){
+                arr = 0;
+            }
+            // tword.innerHTML = word;
+            tword.innerHTML = arr;
+        })
+    </script>
+
+</body>
+
+</html>

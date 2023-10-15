@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .code{
+        border: 1px solid black;
+        width: 300px;
+        margin: 100px auto;
+        padding: 50px;
+        text-align: center;
+        background-color: brown;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="code">
+        <h1 id="h1">HEX CODE</h1>
+        <p id="main">Pratik</p>
+        <button onclick="randomCode()">Click me</button>
+    </div>
+    <script>
+
+        function randomCode() {
+            let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+            let hex = '#';
+            for(let i=0; i<6; i++){
+                let random = Math.trunc(Math.random() * array.length);
+                // console.log(Math.trunc(Math.random() * array.length))
+                hex += array[random];
+                // console.log(hex += array[random])
+            }
+            let x = document.getElementById("main");
+            x.style.color = hex;
+            x.innerHTML = hex;
+            document.body.style.backgroundColor = hex;
+        };
+
+    </script>
+</body>
+
+</html>

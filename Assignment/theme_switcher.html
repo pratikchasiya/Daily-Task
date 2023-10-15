@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #theme {
+            width: 60%;
+            height: 400px;
+            border: 1px solid black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+
+        #main {
+            text-align: center;
+            border: 1px solid black;
+            padding: 20px; 
+        }
+
+        .cls {
+            height: 20px;
+            width: 20px;
+            background-color: aqua;
+            text-align: center;
+            display: inline-block;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        #color_switcher{
+            padding: 0 50px;
+        }
+
+        #img img {
+            width: 200px;
+            height: 200px;
+        }
+
+        #part {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 25px;
+            width: 100%;
+        }
+
+        #img {
+            width: 40%;
+            padding: 25px 60px;
+        }
+
+        #para {
+            width: 60%;
+            padding: 25px 60px;
+        }
+
+        h2 {
+            padding: 15px;
+        }
+
+        p {
+            text-align: justify;
+        }
+        #span1{
+            background-color: aqua;
+        }
+        #span2{
+            background-color: crimson;
+        }
+        #span3{
+            background-color:cornflowerblue;
+        }
+        #span4{
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="theme">
+        <div id="main">
+            <h1 class="cls1">THEME SWITCHER</h1>
+            <div id="color_switcher">
+                <span class="cls" id="span1" onclick="show('aqua','skyblue')"></span>
+                <span class="cls" id="span2" onclick="show('crimson','wheat')"></span>
+                <span class="cls" id="span3" onclick="show('cornflowerblue','grey')"></span>
+                <span class="cls" id="span4" onclick="show('black','green')"></span>
+            </div>
+        </div>
+        <div id="part">
+            <div id="img">
+                <img src="images/360_F_177476718_VWfYMWCzK32bfPI308wZljGHvAUYSJcn.jpg" alt="">
+            </div>
+            <div id="para">
+                <h2 class="cls1">A Sweet Heading</h2>
+                <p class="cls1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit voluptates dolorem maiores, ab beatae
+                    eum explicabo molestiae dolores itaque exercitationem ipsum, optio, repudiandae labore dolore magni.
+                    Temporibus eos recusandae quibusdam!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let btn = document.getElementsByClassName("cls");
+        let theme = document.getElementById("theme");
+        let main = document.getElementById("main");
+        function show(a,b){
+            part.style.backgroundColor = a;
+            main.style.backgroundColor = b;
+            let para = document.getElementsByClassName("cls1");
+            if(a == "black"){
+                for(let x of para){
+                    x.style.color = "white";
+                }
+            }
+            else{
+                for(let x of para){
+                    x.style.color = "black";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
+

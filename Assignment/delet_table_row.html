@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELETE TABLE ROW</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #table {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .tbl {
+            width: 500px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        #cap {
+            background-color: orangered;
+            padding: 10px 25px;
+        }
+
+        th {
+            border: 1px solid black;
+            background-color: wheat;
+            padding: 5px;
+        }
+
+        td {
+            border: 1px solid black;
+            background-color: wheat;
+            padding: 10px 15px;
+        }
+
+        .btn {
+            background-color: indianred;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="table">
+        <div id="main">
+            <table class="tbl">
+                <caption id="cap">Student Details</caption>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>student1</td>
+                    <td>std1@gmail.com</td>
+                    <td>8154944090</td>
+                    <td><button class="btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>student2</td>
+                    <td>std2@gmail.com</td>
+                    <td>8155646236</td>
+                    <td><button class="btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>student3</td>
+                    <td>std3@gmail.com</td>
+                    <td>8157456123</td>
+                    <td><button class="btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>student4</td>
+                    <td>std4@gmail.com</td>
+                    <td>9754944090</td>
+                    <td><button class="btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>student5</td>
+                    <td>std5@gmail.com</td>
+                    <td>8454944090</td>
+                    <td><button class="btn">Delete</button></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    <script>
+        let btn = document.getElementsByClassName("btn");
+        let prt = document.getElementsByTagName("tr");
+        for (let x of prt) {
+            x.addEventListener('click', function () {
+                if (confirm("are you sure, you want to delete this row")) {
+                    x.style.display = "none";
+                }
+                // let prt = x.parentElement;
+
+            })
+        }
+       
+    </script>
+</body>
+
+</html>

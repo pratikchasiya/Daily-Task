@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #accordian{
+            width: 800px;
+            /* border: 1px solid black; */
+            margin: 50px auto;
+        }
+        .sec{
+            border: 1px solid black;
+        }
+        .cls{
+            border: 1px solid black;
+            padding: 10px;
+            position: relative;
+        }
+        .para{
+            padding: 15px;
+            text-align: justify;
+        }
+        .plus{
+            position: absolute;
+            top: 15px;
+            right: 50px;
+            font-size: 20px;
+        }
+        .minus{
+            position: absolute;
+            top: 15px;
+            right: 50px;
+            font-size: 20px;
+        }
+        .toggle{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="accordian">
+        <div class="sec">
+            <div class="cls">
+                <h2>Section 1</h2>
+                <div class="plus"><i class="fa-solid fa-plus"></i></div>
+                <div class="minus toggle"><i class="fa-solid fa-minus"></i></div>
+            </div>
+            <div class="para toggle">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quis rem, quas repellendus qui provident. Similique explicabo aliquid, omnis veniam sunt eius reprehenderit possimus odit iure quibusdam exercitationem ipsum atque fugiat a et magni voluptas cupiditate qui. Aperiam ducimus rerum sequi illo ipsa totam consequatur. Error natus non est ad?</p>
+            </div>
+        </div>
+        <div class="sec">
+            <div class="cls">
+                <h2>Section 2</h2>
+                <div class="plus"><i class="fa-solid fa-plus"></i></div>
+                <div class="minus toggle"><i class="fa-solid fa-minus"></i></div>
+            </div>
+            <div class="para toggle">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quis rem, quas repellendus qui provident. Similique explicabo aliquid, omnis veniam sunt eius reprehenderit possimus odit iure quibusdam exercitationem ipsum atque fugiat a et magni voluptas cupiditate qui. Aperiam ducimus rerum sequi illo ipsa totam consequatur. Error natus non est ad?</p>
+            </div>
+        </div>
+        <div class="sec">
+            <div class="cls">
+                <h2>Section 3</h2>
+                <div class="plus"><i class="fa-solid fa-plus"></i></div>
+                <div class="minus toggle"><i class="fa-solid fa-minus"></i></div>
+            </div>
+            <div class="para toggle">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quis rem, quas repellendus qui provident. Similique explicabo aliquid, omnis veniam sunt eius reprehenderit possimus odit iure quibusdam exercitationem ipsum atque fugiat a et magni voluptas cupiditate qui. Aperiam ducimus rerum sequi illo ipsa totam consequatur. Error natus non est ad?</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let sec = document.getElementsByClassName("sec");
+        let cls = document.getElementsByClassName("cls");
+        let para = document.getElementsByClassName("para");
+        let p;
+        
+        for(let i=0; i<cls.length; i++){
+           
+            cls[i].addEventListener('click',function(){
+                for(let x of cls){
+                if(p != i){
+                    if(x.lastElementChild.previousElementSibling.classList.contains("toggle")){
+                        x.lastElementChild.previousElementSibling.classList.remove("toggle");
+                        x.nextElementSibling.classList.add("toggle");
+                        x.lastElementChild.classList.add("toggle");
+                    }
+                }
+            }
+                cls[i].nextElementSibling.classList.toggle("toggle");
+                cls[i].lastElementChild.classList.toggle("toggle");
+                cls[i].lastElementChild.previousElementSibling.classList.toggle("toggle");
+                p = i;
+            })
+        }
+    </script>
+</body>
+</html>

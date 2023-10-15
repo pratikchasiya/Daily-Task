@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h1>
+            WORD COUNT AND CHAR TYPE2
+        </h1>
+    </div>
+    <script>
+        let string = prompt("Enter a string");
+        let trim = string.trim();
+        console.log(trim);
+        let array = trim.split(" ");
+        let newarr = array.sort();
+        let newstr = newarr.join(" ");
+        let trim1 = newstr.trim();
+        let newarr2 = trim1.split(" ");
+        let newarr3 = newarr2.length;
+        console.log(`Total word = ${newarr3}`);  
+        console.log(`Total char = ${string.length}`); 
+    </script>
+</body>
+</html>

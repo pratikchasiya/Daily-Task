@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h1>CHECK STRING PALINDROM OR NOT</h1>
+    </div>
+    <script>
+        /* PALINDROME MEANS AAPRE AGAR THI VANCHIYE K PA6AR THI VANCHIYE SAME J VANCHAY EX : NAMAN A NAMAN */
+        let string1 = prompt("Enter a string");
+        let len = string1.length;
+        let array1 = string1.split(" ");
+        let array2 = array1.reverse();
+        let string2 = array2.join(" "); 
+        if(string1 == string2){
+            console.log("it is palindrome");
+        }
+        else{
+            console.log("it is not palindrome");
+        }
+
+        
+    </script>
+</body>
+</html>

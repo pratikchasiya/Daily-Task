@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #main{
+            width: 30%;
+            padding: 50px;
+            margin: 30px auto;
+            background-color: aquamarine;
+        }
+        input{
+            padding: 10px;
+            width: 100%;
+            margin: 30px 0;
+        }
+        p{
+            background-color: white;
+            width: 100%;
+            padding: 5px;
+            font-size: 20px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        span{
+            padding: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form id="frm">
+            <input type="date" id="first">
+            <input type="date" id="second">
+            <input type="submit" id="sub" placeholder="Click here">
+            <p><span id="year">0</span>Years <span id="month">0</span>Months <span id="day">0</span>Days</p>
+            
+        </form>
+    </div>
+    <script>
+        let form = document.getElementById("frm");
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+            let time1 = document.getElementById("first").value;
+            let time2 = document.getElementById("second").value;
+            time1 = new Date(time1);
+            time2 = new Date(time2);
+            // console.log(time1)
+            let firstyearday = time1.getDate();
+            let lastyearday = time2.getDate();
+          
+            // console.log(firstyearday); 10054
+            
+            // console.log(lastyearday);  19457
+
+            let time;
+            if(time2 > time1){
+                time = time2.getTime() -  time1.getTime()
+                console.log(time)
+            }
+            else{
+                time = time1.getTime() -  time2.getTime()
+            }
+
+            let second = time / 1000;
+            let day = second / 60 / 60 / 24;
+
+            let x;
+            if(firstyearday > lastyearday){
+                x = 31 - firstyearday;
+                x = x + lastyearday;
+                document.getElementById("day").innerHTML = x;
+            }
+            else{
+                x = lastyearday - firstyearday;
+                document.getElementById("day").innerHTML = x;
+            }
+
+            let month = ((day - x) / 30.41) % 12;
+            document.getElementById("month").innerHTML = Math.floor(month);
+
+            let year = day / 365;
+            document.getElementById("year").innerHTML = Math.floor(year);
+           
+        });
+    </script>
+</body>
+</html>

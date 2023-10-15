@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 50px;
+            width: 400px;
+            background-color: bisque;
+        }
+        #sec1{
+            padding: 10px 15px;
+        }
+        #sec2{
+            padding: 10px 15px;
+            margin: 5px;
+        }
+        span{
+            padding: 3px;
+            margin: 9px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <fieldset>
+            <legend>Select your technical skills</legend>
+            <div id="sec1">
+                <input type="checkbox" id="select"> <span>Select All</span>
+            </div>
+            <div id="sec2">
+                <input type="checkbox" class="input"> <span>Asp.Net</span>
+                <input type="checkbox" class="input"> <span>MVC</span><br>
+                <input type="checkbox" class="input"> <span>jQuery</span>
+                <input type="checkbox" class="input"> <span>WCF</span>
+            </div>
+        </fieldset>
+    </div>
+    <script>
+        let course = document.getElementsByClassName("input");
+        let select = document.getElementById("select");
+        for(let i=0;i<course.length; i++){
+            course[i].addEventListener('change',function(){
+                let check = document.querySelectorAll(".input:checked");
+                if(course.length == check.length){
+                    select.checked = true;
+                }
+                else{
+                    select.checked = false;
+                }
+              
+            })
+            select.addEventListener('change',function(){
+                if(select.checked == true){
+                    for(let x of course){
+                        x.checked = true;
+                    }
+                }
+                else{
+                    for(let x of course){
+                        x.checked = false;
+                    }
+                }
+                
+            })
+        }
+    </script>
+</body>
+</html>

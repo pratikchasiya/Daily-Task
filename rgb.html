@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #main {
+            border: 1px solid blue;
+            width: 100vw;
+            height: 100vh;
+            background-color: blueviolet;
+            
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            padding: 15px 25px;
+            font-size: 20px;
+            background-color: yellow;
+            color: crimson;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <button id="btn">Random Color</button>
+    </div>
+</body>
+<script>
+    let output = document.getElementById("out");
+    let r;
+    let g;
+    let b;
+    let button = document.getElementById("btn");
+    let main = document.getElementById("main");
+    button.addEventListener("click", function () {
+        r = Math.trunc(Math.random() * 255);
+        g = Math.trunc(Math.random() * 255);
+        b = Math.trunc(Math.random() * 255);
+        let rgb = `rgb(${r},${g},${b})`;
+        main.style.backgroundColor = rgb;
+    })
+</script>
+
+</html>
